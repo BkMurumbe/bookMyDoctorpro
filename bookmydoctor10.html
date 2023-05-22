@@ -1,0 +1,1892 @@
+<!--  Project done by Balaji and Bhagyashree , Dr dy Patil ACS College, Book my doctor appointment, We done this project  by from scratch,its testing version, copyright@2023  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyDoctorPro</title>
+    <style>
+        body{
+            
+            padding:0;
+            margin:0;
+            font-size:16px;
+            background:#F5F5F5;
+            color:#3C3C3C;
+            
+        }
+        
+        *{
+            
+            box-sizing:border-box;
+            font-family:Roboto;
+        }
+        
+        #app{
+        
+            width:100vw;
+            height:100vh;
+            padding:1em; 
+            overflow:auto;
+             
+        }
+
+        #footercont{
+            
+            width:100vw;
+            font-size:12px;
+            background:cyan;
+            padding:2em 1em 2em 1em;
+            
+        }
+        h1{
+  font-size: 96px;
+}
+h2{
+  font-size: 60px;
+}
+h3 {
+  font-size: 48px;
+}
+h4{
+  font-size: 34px;
+}
+h5{
+  font-size: 24px;
+}
+h6{
+  font-size: 20px;
+}
+.body1{
+  font-size: 16px;
+}
+.body2{
+  font-size: 14px;
+}
+.subtitle1{
+  font-size: 16px;
+}
+.subtitle2{
+  font-size: 14px;
+}
+.primebtn{
+  height:45px;
+  padding:0.5em 2em 0.5em 2em;
+  font-size: 14px;
+  font-weight:bold;
+  background:#7CCD7C;
+  color:3C3C3C;
+  border:none; 
+  border-radius:50px;
+  margin:0.5em;
+}
+
+.secbtn{
+ height:45px;
+ padding:0.5em 2em 0.5em 2em;
+ font-size: 14px;
+ font-weight:bold;
+ background:none;
+ color:#3C3C3C;
+ border:solid 1.5px cyan;  
+ border-radius:50px;
+ margin:0.5em;
+}
+.overline{
+  font-size: 10px;
+}
+.caption{
+  font-size: 12px;
+}
+
+        #head{
+         height:60px;
+         width:100vw; 
+         display:flex;
+         justify-content:space-around;
+         align-items: center;
+         background:#00BFFF;
+         outline:solid 1.5px pink;
+         box-shadow:0px 2px 3px grey;
+         color:#3C3C3C;
+            
+        }
+        #menu{
+            
+            width:100vw;
+            
+        }
+        
+#menuitm {
+  padding:0.5em;
+  width:100%;
+  list-style: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size:14px;
+  font-weight:bold;
+  background:none;
+  overflow:auto;
+  border-bottom:solid 1.5px #000;
+}
+
+#menuitm li {
+  
+  display: inline-block;
+  margin: 0 10px;
+  border-radius:50px;
+  background:#00BFFF;
+  padding:1em 1.5em 1em 1.5em;
+  color:#3C3C3C;
+  
+  
+}
+#menuitm li:active{
+    
+    transform:scale(0.9);
+    transition:0.3s;
+    
+}
+
+#menuitm li:hover{
+    
+  background:orange; 
+  
+}
+
+button:active{
+    
+    transform:scale(0.9);
+    transition:0.3s;
+}
+button:hover{
+    background:#00BFFF;
+}
+
+        
+        #title{
+            
+            color:#3C3C3C;
+        }
+        
+#paymentcont select{
+   
+   height:45px;
+   width:200px;
+   padding:1em;
+   border:solid 1.5px #00BFFF;
+   border-radius:8px;
+   margin:1em;
+}        
+
+#pname,#paddress,#pmobile{
+    
+    height:40px;
+    width:250px;
+    outline:solid 1.5px #00BFFF;
+    border: none;
+    padding:0em 0.8em 0em 0.8em;
+} 
+#pname{
+    
+    border-radius:8px 8px 0px 0px;
+} 
+#pmobile{
+    
+    border-radius:0px 0px 8px 8px;
+} 
+
+#vdrotp,#vpatotp{
+    height:40px;
+    width:250px;
+    outline:solid 1.5px #00BFFF;
+    border: none;
+    border-radius:8px;
+    padding:0em 0.8em 0em 0.8em;
+}
+
+.drinput{
+   
+    height:40px;
+    width:250px;
+    outline:solid 1.5px #00BFFF;
+    border: none;
+    padding:0em 0.8em 0em 0.8em; 
+    
+}
+
+.drinputind{
+
+    height:40px;
+    width:250px;
+    outline:solid 1.5px #00BFFF;
+    border: none;
+    padding:0em 0.8em 0em 0.8em;
+    border-radius:8px; 
+    
+}
+
+#drname{
+    
+    border-radius:8px 8px 0px 0px;
+}
+
+#drmb{
+    
+    border-radius:0px 0px 8px 8px;
+}
+
+.drptcards{
+    
+   padding:1.5em; 
+   border-radius:8px;
+   outline:solid 1.5px pink;
+   margin:1em 0.5em 1em 0.5em;
+    
+} 
+.doctorscontainer{
+   
+   padding:0;
+   margin:0; 
+}
+
+.drshowpt{
+
+  
+   display: inline-block;
+   padding:1.5em; 
+   background:#fff;
+   margin:1em 0.3em 1em 0.3em;
+   border-radius:4px;
+   font-size:14px;
+       
+}
+
+.drtitle{
+    
+    font-size:24px;
+    font-weight:bolder;
+} 
+
+.bookbtn{
+    
+    height:45px;
+    width:150px;
+    border-radius:50px;
+    border: none;
+    background:#7CCD7C;
+    color:#000;
+    margin:2em 0em 1em 0em;
+    padding:0.5em;
+    font-weight:bolder;
+} 
+
+.notification {
+
+      background-color:#000;
+      color: #fff;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      left:0;
+      height:40px;
+      width:100%;
+      z-index: 9999;
+      display:none;
+      
+    }
+    
+.doctlist{
+   
+  padding:0.5em;
+  width:100%;
+  list-style: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+ #homeh3{
+     color:#000;
+ }  
+ 
+ #discount{
+ 
+     display:flex;
+     flex-direction:column;
+     justify-content:left;
+     align-items:left;
+     width:250px;
+     background:cyan;
+     color:dodgerblue;
+     font-weight:bold;
+     padding:1em;
+     margin-top:1em;
+     border-radius:6px;
+     outline:dashed 1.5px orange;
+       
+ }
+ 
+ #homedrlist{
+    
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     flex-wrap:wrap;
+     background:#fff;
+     padding:2em 1em 2em 1em;
+     border-radius:6px;
+     
+     }
+     
+ #homedrlist div{
+     
+     border-radius:6px;
+     background:none;
+     color:#000;
+     margin:0.5em;
+     
+ } 
+ 
+#homedrlist div:active{
+    
+    transform:scale(0.9);
+}
+
+.imges{
+  
+  height:100px;
+  width:100px;
+  overflow: hidden;
+}
+
+.imges img{
+
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  
+}
+
+#homebanner{
+
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin-bottom:1em;  
+    background:cyan;
+    border-radius:6px; 
+    padding:1em;
+    
+}
+
+#homebanner div{
+ 
+    margin-bottom:1em;
+}
+
+.mydoctimg{
+    
+    height:280px;
+    width:280px;
+    margin:1em;
+}
+.mydoctimg img{
+   
+  width:100%;
+  height:100%; 
+  object-fit:cover; 
+  border-radius:50%;
+}
+.centerclass{
+    
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+}
+
+#datecont{
+
+    padding:1em;
+    background:#fff;
+    border-radius:6px;
+    
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  transition: left 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar-content p{
+ display:flex;
+ justify-content:left;
+ align-items:left;  
+ padding:1em;
+ width:100%;
+ 
+ 
+}
+
+.sidebar-content p:hover{
+
+background:cyan;
+    
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-open {
+  left: 0;
+}
+
+.sidebar-open ~ .sidebar-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+    
+    </style>
+</head>
+<body>
+    <header>
+    <div id="head">
+        <h5 id="title">Book My Doctor</h5>
+        <button onclick="openbar()" class="secbtn">menu</button>
+        
+      </div>
+      </header>
+    <nav>
+     <div id="menu">
+  <ul id="menuitm">
+    <li onclick="navigate('?q=home')">
+     Home
+    </li>
+    <li onclick="navigate('?q=doctorlistpage')">Doctors</li>
+    <li onclick="navigate('?q=paitents')"> Paitents login 
+    </li>
+    <li onclick="navigate('?q=doctors')">
+      Doctors login
+    </li>
+    <li onclick="navigate ('?q=appointmentlistpage')">Paitent appointments</li>
+  </ul>
+  </div> 
+    
+</nav>
+
+<main>
+    
+<div id="app">
+ 
+  <!-- Rendered content goes here -->
+</div>
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-content" onclick="closeSidebar()">
+    <!-- Sidebar content goes here -->
+      <p onclick="navigate('?q=home')">Home</p>
+       <p onclick="navigate('?q=doctorlistpage')">Find Doctors</p>
+       <p onclick="navigate('?q=paitents')">Paitent Login</p>
+       <p onclick="navigate('?q=doctorsignup')">Doctors Login</p>
+       <p onclick="navigate ('?q=appointmentlistpage')">Check Appointments</p> 
+    <button class="close-btn" onclick="closeSidebar()">×</button>
+  </div>
+</div>
+
+<div class="sidebar-backdrop" onclick="closeSidebar()"></div>
+
+</main>
+<footer>
+   <div id="footercont">
+   <p>App made by Bhagyashree Wakaskar & Balaji Murumbe</p>
+   </div>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-functions.js"></script>
+
+    <script>
+     var appdate;
+     var apptime;
+     var secdoctorid;   
+  const firebaseConfig = {
+    apiKey: "AIzaSyCw6cze3AGWzS8tyaFMMPAqSA1f2ba-VVg",
+    authDomain: "doctorsapp-5db0f.firebaseapp.com",
+    projectId: "doctorsapp-5db0f",
+    storageBucket: "doctorsapp-5db0f.appspot.com",
+    messagingSenderId: "1094540714990",
+    appId: "1:1094540714990:web:9083debe944446828aa4ff",
+    measurementId: "G-6QLX92P5F8"
+  };
+
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();				
+
+function navigate(route) {
+    
+  history.pushState({ route }, null, route);
+
+  renderContent(route);
+}
+
+function handlePopstate(event) {
+
+  const state = event.state;
+  
+  if (state) {
+    renderContent(state.route);
+  } 
+}
+
+fm();
+
+//function to route
+
+function fm(){
+
+const checkq = checkQueryParam();
+const qpart = getFirstQParam();
+if(checkq==true){
+navigate(`?q=${qpart}`);
+}
+if(checkq==false){
+navigate("?q=home");
+ }
+}
+
+function getFirstQParam() {
+
+  const regex = /[?&]q=([^&]*)/i;
+  const match = window.location.search.match(regex);
+  return match !== null ? match[1] : null;
+}
+
+function checkQueryParam() {
+  const param= new URLSearchParams(window.location.search);
+  const regex = new RegExp(`[?&]${param}(=|&|$)`, 'i');
+  return regex.test(window.location.search);
+}
+
+function renderContent(route) {
+
+  // Get a reference to the content element where we want to display the page content
+  const contentEl = document.getElementById('app');
+
+  // Clear the existing content from the content element
+  contentEl.innerHTML = '';
+  // Call the appropriate content rendering function for the specified route
+  switch (route) {
+    case '?q=home':
+      renderHomeContent();
+      break;
+    case '?q=paitents':
+     rendermainpatpg();
+      break;
+    case '?q=doctors':
+      rendermaindocpg();
+      break;
+    case '?q=datepg':
+    renderDates();
+    break;
+    case '?q=timepg':
+    renderTime();
+    break;
+    case '?q=confirmpg':
+    renderConfirmpg();
+    break;
+    case '?q=personalinfo':
+    renderBasicinfo();
+    break;
+    case '?q=phoneverify':
+    renderphoneverify();
+    break;
+    case '?q=doctorsignup':
+    renderdoctorpg();
+    break;
+    case '?q=drmobileverify':
+    verifydrmobile();
+    break;
+    case '?q=phonelogin':
+    renderPhoneLogin();
+    break;
+    case '?q=doctorlistpage':
+    renderDrList();
+    break;
+    case '?q=appointmentlistpage':
+    renderdoctorDashboard();
+    break;
+    case '?q=patappointbooked':
+    paitentappsuccess();
+    break;
+    case '?q=tabdoctors':
+    renderTabDoctors();
+    break;
+
+    default:
+      contentEl.innerHTML = 'Error: Route not found';
+      
+  }
+}
+
+
+
+// Attach an event listener to the popstate event to handle browser back/forward navigation
+window.addEventListener('popstate', handlePopstate);
+
+//render functions
+
+function displaycontent(contentdata){
+    
+    const contentEl = document.getElementById('app');
+    contentEl.innerHTML=contentdata;
+    
+}
+
+//paitents page
+
+function rendermainpatpg() {
+  
+  const aboutMarkup = `
+    <div>
+    <h3>Paitents Registration</h3>
+    <p>To start booking appointments online you need to verify your phone number</p>
+    <button onclick="navigate('?q=phonelogin')" class="primebtn">Register Now</button>
+    </div>
+  `;
+  
+  displaycontent(aboutMarkup);
+
+}
+
+const sidebar = document.getElementById("sidebarmenu");
+
+function openbar() {
+  var sidebar = document.getElementById('sidebar');
+  sidebar.classList.add('sidebar-open');
+}
+
+function closeSidebar() {
+  var sidebar = document.getElementById('sidebar');
+  sidebar.classList.remove('sidebar-open');
+}
+
+function renderHomeContent(){
+    
+  // Define the HTML markup for the about page content using a template string
+  const markup = `
+    <div>
+    
+    <div id="homebanner">
+     <div>
+    <h3 id="homeh3">Book Your Doctor Appointment</h3>    
+    <p>Lets book clinic visits for free online with the help of BookMyDoctorPro</p>
+    <button class="primebtn" onclick="navigate('?q=phonelogin')">Book Appointment</button>
+    </div>
+    <div class="mydoctimg">
+        <img src="mydoct.webp" alt="mydoctor">
+    </div>
+    </div>
+    
+    <div id="homedrlist">
+        <div onclick="tabDisplayDentist()">
+            <div class="imges">
+            <img src="webdentist.webp" alt="dentist">
+            </div>
+           <p>Dentist</p>
+            </div>
+            
+        <div onclick="tabDisplayGeneral()">
+            <div class="imges">
+            <img src="webgeneral.webp" alt="general">
+            </div>
+            <p>General</p>
+            </div>
+            
+        <div onclick="tabDisplayCardiologist()">
+            <div class="imges">
+            <img src="webheart.webp" alt="cardiast">
+            </div>
+            <p>Cardiologist</p>
+        </div>
+        
+        <div onclick="tabDisplayDiabetics()">
+            <div class="imges">
+           <img src="webdiabetic.webp" alt="diabetes"></img>
+           </div>
+           <p>Diabetics</p>
+            </div>
+            
+        <div onclick="tabDisplaySkincare()">
+            <div class="imges">
+            <img src="webskincare.webp" alt="skincare">
+            </div>
+            <p>Skincare</p>
+            </div>
+            
+        <div onclick="tabDisplaySurgeon()">
+            <div class="imges">
+            <img src="websurgeon.webp" alt="surgeon">
+            </div>
+            <p>Surgeon</p>
+            </div>
+            
+    </div>
+    
+    <div class="homebanner">
+    
+  </div>
+   
+   </div>
+  `;
+  
+   
+   displaycontent(markup);
+   
+}
+
+//tab doctors page
+function renderTabDoctors(){
+    
+   const markup =`
+   <div id="drtablist">
+       
+   </div>
+   `;
+   displaycontent(markup);
+   
+}
+
+function rendermaindocpg(){
+    
+ 
+  const markup = `<div>
+    <h3>Doctors Registation</h3>
+    <p>Dear doctors Register yourself or your hospital, give your paitents flexibility to book appointment online</p>
+    <button class="primebtn" onclick="navigate('?q=phonelogin')">Register now</button>
+    <p>*Its Free for all doctors...</p>
+ </div> `;
+displaycontent(markup);
+
+}
+
+function renderDates(){
+    
+    const sayhello = `<div></div>`;
+    displaycontent(sayhello);
+    
+    
+}
+
+function renderTime(){
+    
+    const markup = `<div></div>`;
+    displaycontent(markup);
+    
+    
+}
+
+function renderBasicinfo(){
+    
+    const markup = `<div class="centerclass">
+        <div class="centerclass">
+        <h4>Basic info</h4>
+        <input type="text" id="pname" placeholder="Enter paitent full name">
+        <input type="text" id="paddress" placeholder="paitent living city/address">
+         <input type="text" id="pmobile" placeholder="Enter phone number"> 
+         </div>  
+         <br>
+         <div id="carddate" class="centerclass">
+    <h4>Choose Date</h4>  
+    <div id="datecont" ></div>
+    
+    </div>
+    <br>
+     <div id="cardtime">
+    <h4>Choose Time</h4>    
+    <div id="timeSlotContainer"></div>
+    <div id="cardf">
+        <div id="paymentcont">
+            <h5>Choose payment method</h5>
+            <p><b id="doctorfees">200 Rs</b></p>
+            <select id="paymethod">
+                <option>Pay at clinic</option>
+            </select>
+        </div>
+       
+    </div>
+    </div>
+        <button class="primebtn" onclick="savingPaitentAppointments()">Book Appointment</button>
+    </div>`;
+    displaycontent(markup);
+    showDates();
+    displayTimeSlots('09:00', '17:00', 60, '12', 'India'); 
+}
+
+//phone login component
+
+function renderPhoneLogin(){
+    
+    const markup = `<div>
+       
+       <h4>Phone verification</h4>
+       <div>
+            <p>Who are you?</p>
+       <select id="usertype" class="drinputind">
+           <option>Choose</option>
+           <option value="Doctor">Doctor</option>
+           <option value="Paitent">Paitent</option>
+        </select>   
+       </div>
+       <br>
+       <div>
+       <input type="number" id="userphone" placeholder="Enter phone number" class="drinputind">
+        <button class="primebtn" onclick="sendPhoneOtp()" id="phoneotpbtn">Send OTP</button>
+        <p><small>while resend otp first refresh the page.</small></p>
+        <button class="secbtn" onclick="refreshPage()">Refresh</button>
+        </div>
+         <div>   
+        <p>shortly you will recieve otp! please Enter here. </p>
+        <input id="userphoneotp" type="number" placeholder="Enter OTP" class="drinputind" >
+        <button class="primebtn" onclick="verifyPhone()">Verify</button>
+    </div>
+    </div>`;
+    displaycontent(markup);
+}
+
+function renderConfirmpg(){
+    
+    const markup = `<div id="cardf">
+        <h4>Confirm appointment</h4>
+        
+        <div id="recentappointment">app data</div>
+        <div id="paymentcont">
+            <h5>Choose payment method</h5>
+            <p><b id="doctorfees">200 Rs</b></p>
+            <select id="paymethod">
+                <option>Pay at clinic</option>
+            </select>
+        </div>
+        <button class="primebtn">Book Now</button>
+    </div>`;
+    displaycontent(markup);
+}
+   
+function renderdoctorpg(){
+    const markup = `
+    <div>
+        
+        <h4>Doctor registration</h4>
+    <div>
+        <input id="drname" class="drinput" type="text" placeholder="Doctor Name">
+    <input id="drhpname" class="drinput" type="text" placeholder="Your hospital Name">
+    <input id="drhpaddress" class="drinput" type="text" placeholder="Hospital address">
+    <input id="dredu" class="drinput" type="text" placeholder="Your Qualification">
+     <select id="drspeciality" class="drinput">
+        <option>Choose Specialization</option>
+        <option>Diabetics</option>
+        <option>Cardiologist</option>
+        <option>Dentist</option>
+        <option>General</option>
+        <option>Skincare</option>
+        <option>Surgeon</option>
+        </select>
+     <input id="drfees" type="number" class="drinput" placeholder="Checkup fees in Rs.">
+    
+    <input id="drmb" type="number" class="drinput" placeholder="Your active mobile number">
+    
+</div> 
+<br> 
+<div>
+    
+  <p>Choose Hospital Opening time</p> 
+    <input id="hpopentime" type="time" class="drinputind" placeholder ="Open Time">
+    <br>
+    <p>Chosee Hospital Closing time</p>
+      <input id="hpclosetime" type="time" class="drinputind" placeholder ="Close Time">  
+</div>  
+<div>
+    <button class="primebtn" onclick="savingDoctorToDb()">Register</button>
+</div>
+    </div>`;
+  
+  displaycontent(markup);
+} 
+
+function renderdoctorDashboard(){
+    
+   const markup=`<div>
+       
+       <h4>Welcome Dr.</h4>
+       <div>
+           <p>See Booked Appointments</p>
+           <input type="number" id="dashboardid" class="drinputind" placeholder="Enter Your mobile number">
+          <button class="primebtn" onclick="showdrbookedappointmentlist()">Show my Appointments</button> 
+       </div>
+      <div>
+        <div id="dryourappointments">
+            Appointment coming up
+        </div>
+    </div> 
+   </div>`;
+   displaycontent(markup);
+}
+
+function paitentappsuccess(){
+    
+    const markup = `<div>
+        
+        <h4>Successfully Booked</h4>
+        <p>Hey your Doctor appointment booked successfully!</p>
+        <p>Thank you for booking!</p>
+    </div>`;
+    displaycontent(markup);
+}
+
+function verifydrmobile(){
+    
+     const markup =`<p>helo</p>`;
+  displaycontent(markup);  
+} 
+
+
+
+//function to show Dr appointment
+
+function showdrbookedappointmentlist(){
+
+   const docyourmobile = dataValue("dashboardid");
+   renderdrapp(docyourmobile);
+   console.log(docyourmobile);
+   
+}
+
+async function getAppointmentsByDoctorId(doctorId) {
+  const appointmentsRef = db.collection("patients");
+  const querySnapshot = await appointmentsRef.where("doctorid", "==", doctorId).get();
+  
+  const appointments = [];
+  querySnapshot.forEach((doc) => {
+    appointments.push(doc.data());
+  });
+  
+  return appointments;
+}
+
+function renderdrapp(docyourid){
+    const docappointcont = document.getElementById("dryourappointments");
+    const newdoc = document.createElement("div");
+    const doctorId = docyourid;
+    
+getAppointmentsByDoctorId(doctorId).then((appointments) => {
+    // Iterate over appointments
+    appointments.forEach((appointment) => {
+      
+      // Access appointment fields
+      
+      const patientName = appointment.ptname;
+      
+      const paitentAddres = appointment.ptaddress;
+      
+      const paitentPhone = appointment.ptphone;
+      
+      const paitentDate = appointment.ptdate;
+      
+      const paitentTime = appointment.pttime;
+      
+      const paitentpaymethod = appointment.ptpaymethod;
+      
+      const ctimestamp = appointment.timestamp;
+      
+      const appointmarkup = `
+      <div class="drptcards">
+          <p>Paitent Name: ${patientName}</p>
+          <p>Paitent Address: ${paitentAddres}</p>
+          <p>Paitent Mobile: ${paitentPhone}</p>
+          <p>Date: ${paitentDate}</p>
+          <p>Time: ${paitentTime}</p>
+          <p>Payment method: ${paitentpaymethod}</p>
+          <p>Time Stamp ${ctimestamp}</p>
+
+      </div>
+      `;
+   
+ docappointcont.innerHTML+=appointmarkup;
+ 
+    });
+  }).catch((error) => {
+    // Handle any potential errors
+    console.error("Error retrieving appointments:", error);
+  });
+
+ 
+}
+
+
+
+
+//function to get doctor list
+
+async function getRegisteredDoctors() {
+  const doctors = [];
+  const snapshot = await firebase.firestore()
+    .collection('doctors')
+    .get();
+
+  snapshot.forEach((doc) => {
+    doctors.push({
+      id: doc.id,
+      ...doc.data()
+    });
+    renderDoctors(doctors);
+  });
+
+  
+}
+
+//function to show list of doctors 
+
+function renderDoctors(doctors,contid) {
+ const { name,specialization,doctoredu,hospitalName,address,doctorfees,phoneNumber,doctoruid,dropentime,drsclosetime} = doctors;
+  const container = document.createElement('div');
+  container.classList.add('doctorscontainer');
+
+  doctors.forEach((doctor) => {
+    const card = document.createElement('div');
+    card.classList.add('drshowpt');
+
+    const name = document.createElement('div');
+    name.setAttribute("class","drtitle");
+    name.innerText = `${doctor.name}`;
+    card.appendChild(name);
+
+    const specialization = document.createElement('div');
+    specialization.innerText = `${doctor.specialization}`;
+    card.appendChild(specialization);
+
+    const about = document.createElement('div');
+    about.innerText = `${doctor.doctoredu}`;
+    card.appendChild(about);
+
+    const hospitalName = document.createElement('div');
+    hospitalName.innerText = `${doctor.hospitalName}`;
+    card.appendChild(hospitalName);
+
+    const hospitalAddress = document.createElement('div');
+    hospitalAddress.innerText = `${doctor.address}`;
+    card.appendChild(hospitalAddress);
+
+    const fees = document.createElement('div');
+    fees.innerText = `Charge ${doctor.doctorfees} Rs.`;
+    card.appendChild(fees);
+    
+    const phone = document.createElement('div');
+    phone.setAttribute("class","mobile");
+    phone.innerText = `Phone ${doctor.phoneNumber}`;
+    card.appendChild(phone);
+    
+    const opentime = document.createElement('div');
+    opentime.innerText = `Opens at ${doctor.dropentime}`;
+    card.appendChild(opentime);
+    
+    const closetime = document.createElement('div');
+    closetime.innerText = `Closes at ${doctor.drsclosetime}`;
+    card.appendChild(closetime);
+    
+     const btn = document.createElement("button");
+  btn.setAttribute("onclick","bookvisit()");
+  btn.setAttribute("class","primebtn");
+  btn.setAttribute("class","bookbtn");
+  btn.innerText="Book Clinic Visit";
+  card.appendChild(btn);
+  
+  container.appendChild(card);
+  
+  });
+  const doclistcontainer = document.getElementById(`${contid}`);
+  doclistcontainer.appendChild(container);
+  
+  const bookButtons = document.querySelectorAll(".bookbtn");
+  
+bookButtons.forEach(button => {
+  button.addEventListener("click", handleBookClick);
+});
+}
+
+//Dr login
+
+// Function to send SMS verification code 
+
+
+
+// Function to log out user
+
+function logout() {
+  firebase.auth().signOut()
+    .then(() => {
+      alert('logged out');
+      navigate("?q=home");
+    })
+    .catch((error) => {
+      alert(`Error logging out: ${error}`);
+    });
+}
+
+//getotp function to send otp
+
+async function getOTP(phoneNumber) {
+  // Create a new reCAPTCHA verifier
+  
+  var appVerifier = new firebase.auth.RecaptchaVerifier("phoneotpbtn", {
+    size: 'invisible'
+  });
+
+  try {
+    // Send the SMS verification code to the user's phone number
+    
+    const result = await firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier);
+    return result.verificationId;
+  
+  } catch (error) {
+    
+    alert(`Something is wrong! ${error}`);
+    throw error;
+  }
+}
+
+//received OTP verification ID
+var gotvid = 0;
+async function gototp(drmb){
+    
+    try {
+  const verificationId = await getOTP(drmb);
+  // Do something with the verification ID
+  console.log('Verification ID:', verificationId);
+  gotvid = verificationId;
+  toGetUserVid(verificationId);
+  alert("otp sent!");
+  qnotify("Shortly you receive otp....",2000);
+  return verificationId;
+} catch (error) {
+ 
+  alert(`oops! error to get otp,Try refreshing the page ${error}`);
+}
+
+}
+
+function renderDrList(){
+    qnotify("Wait Loading doctors...",2000);
+    const markup =`<div>
+        <h4>Suggested Doctors for you</h4>
+        <div id="doclistcontainer">
+            <h5>General Practitioners</h5>
+            <div id="catgeneral" class="doctlist">
+                
+            </div>
+            <h5>Dentist</h5>
+            <div id="catdentist" class="doctlist">
+               
+            </div>
+            <h5>Cardiologist</h5>
+           <div id="catcardiologist" class="doctlist">
+             
+           </div> 
+           <h5>Surgeon</h5>
+           <div id="catsurgeon" class="doctlist">
+             
+           </div>
+           <h5>Skincare</h5>
+           <div id="catskincare" class="doctlist">
+               
+           </div>
+           <h5>Diabetics</h5>
+           <div id="catdiabetics" class="doctlist">
+            
+           </div>
+        </div>
+    </div>`;
+    
+    displaycontent(markup);
+   
+    displayGeneral();
+    displayDentist();
+    displayCardiologist();
+    displaySurgeon();
+    displaySkincare();
+    displayDiabetics();
+    
+    
+}
+
+function useronboard(){
+const usertypeis = getLocalStorageItem("whoisuser");
+   if(usertypeis == "Doctor"){
+    alert("Welcome Doctor");
+    navigate("?q=doctorsignup");
+   }
+   if(usertypeis == "Paitent"){
+    alert("Welcome Paitent");
+    navigate("?q=doctorlistpage");
+   }
+   
+}
+
+//book appointment button function
+
+function bookvisit(){
+    
+    navigate("?q=personalinfo");
+}
+
+// function to get user entered otp
+
+function verifyPhone(){
+    const usertype = dataValue("usertype");
+    const userOtp = userEnterOtp();
+    console.log(userOtp);
+    const uservid =gotvid;
+    verifyOTP(uservid,userOtp,usertype);
+    
+    
+}
+
+async function verifyOTP(verificationId, verificationCode,whois) {
+  try {
+    // Create a PhoneAuthCredential object
+    const credential = firebase.auth.PhoneAuthProvider.credential(verificationId, verificationCode);
+
+    // Sign in the user with the credential
+    const userCredential = await firebase.auth().signInWithCredential(credential);
+
+    // If the user is signed in successfully, redirect to the dashboard
+    if (userCredential && userCredential.user) {
+      qnotify("congratulations! Login Successfull!",1500);
+     useronboard();
+     setLocalStorageItem("whoisuser",whois);
+     setLocalStorageItem("ulogin","1");
+     console.log(whois);
+    }
+  } catch (error) {
+    // Handle errors here
+    alert(`Error while verification of otp, try again. refresh page ${error}`);
+    throw error;
+  }
+}
+
+function toGetUserVid(vid){
+    
+    const myuservid = vid;
+    
+}
+
+function userEnterOtp(){
+    
+    const getdrotpvalue = dataValue("userphoneotp");
+    return getdrotpvalue; 
+}
+
+//main function to sending otp
+function sendPhoneOtp(){
+    const dataDrMobile = dataValue("userphone");
+    sendingDrotp(dataDrMobile);
+    qnotify("Sending otp.....",5000);
+    
+}
+
+function sendingDrotp(datamb){
+
+    const dataDrMb = datamb;
+    const userPhone =`+91${dataDrMb}`;
+    console.log(userPhone);
+    gototp(userPhone);
+    qnotify("sending otp! please have paitence , typically it takes a 60 second",5000);
+    
+}
+
+//saving appointment data
+
+function savePatientAppointment(patientData) {
+  // Add the patient data to the "patients" collection in Firestore
+  db.collection("patients").add(patientData)
+    .then((docRef) => {
+      console.log("Patient appointment saved with ID: ", docRef.id);
+      qnotify("appointment successfully booked!",2000);
+      navigate('?q=patappointbooked');
+    })
+    .catch((error) => {
+      console.error("Error saving patient appointment: ", error);
+      alert("oops! something gona wrong ");
+    });
+}
+
+function savingPaitentAppointments(){
+    
+    const patname = dataValue("pname");
+    const pataddress = dataValue("paddress");
+    const patphone = dataValue("pmobile");
+    const patpaymethod = dataValue("paymethod");
+    const patdate = appdate;
+    const pattime = apptime;
+    const doctorid =secdoctorid;
+    const currentTimeStamp = getCurrentDateTime();
+
+if(patname!="" && pataddress!="" && patphone!=""){
+    const patientData = {
+     ptname: patname,
+     ptaddress: pataddress,
+     ptphone: patphone,
+     ptdate: patdate,
+     pttime: pattime,
+     ptpaymethod: patpaymethod,
+     doctorid: secdoctorid,
+     timestamp:currentTimeStamp 
+  
+};
+    savePatientAppointment(patientData);
+ }
+ else{
+     alert("please fill all data");
+ }   
+}
+
+//saving dr to db
+
+function savingDoctorToDb(){
+    
+   const dataDrName = dataValue("drname");
+   const dataDrHpName = dataValue("drhpname");
+   const dataDrHpAddress = dataValue("drhpaddress");
+   const dataDrEdu = dataValue("dredu");
+   const dataDrspeciality = dataValue("drspeciality");
+   const dataDrFees = dataValue("drfees");
+   const dataDrMb = dataValue("drmb");
+   const dataDrId = dataDrMb;
+   const dataDrOpenTime = dataValue("hpopentime");
+   const dataDrCloseTime = dataValue("hpclosetime");
+   const fomatDrOpenTime = goodTime(dataDrOpenTime);
+   const fomatDrCloseTime = goodTime(dataDrCloseTime);
+   console.log(dataDrOpenTime);
+   addDoctorToDb(
+   dataDrName,
+   dataDrspeciality,
+   dataDrEdu,
+   dataDrHpName,
+   dataDrHpAddress,
+   dataDrFees,
+   dataDrMb,
+   dataDrId,
+   fomatDrOpenTime,
+   fomatDrCloseTime
+   );
+   
+}
+
+function addDoctorToDb(name, specialization, doctoredu, hospitalName, address, doctorfees, phoneNumber,doctoruid,dropentime,drclosetime) {
+   
+  db.collection("doctors").add({
+    name: name,
+    specialization: specialization,
+    doctoredu: doctoredu,
+    hospitalName: hospitalName,
+    address: address,
+    doctorfees:doctorfees,
+    phoneNumber: phoneNumber,
+    doctoruid: doctoruid,
+    dropentime: dropentime,
+    drsclosetime: drclosetime
+  })
+  .then((docRef) => {
+    console.log("Dr Succefully Registered", docRef.id);
+    
+    alert("Your Doctor Registration successfull!");
+    navigate('?q=appointmentlistpage');
+    setLocalStorageItem("doctorid",docRef);
+  })
+  .catch((error) => {
+    console.error("Error adding doctor data: ", error);
+    alert("Something gone wrong , Try again...");
+    
+  });
+}
+
+
+//logic goes here
+
+function showDates() {
+  const container = document.createElement('div');
+  const datecont = document.getElementById("datecont");
+  container.style.display = 'flex';
+  container.style.flexWrap = 'wrap';
+  container.style.gap = '10px';
+
+  const startDate = new Date();
+  const endDate = new Date();
+  endDate.setMonth(endDate.getMonth() + 1); // add 2 months to the start date
+
+  let currentMonth = '';
+  let monthHeading = null;
+  let monthContainer = null;
+
+  for (let date = startDate; date <= endDate; date.setDate(date.getDate() + 1)) {
+    const month = date.toLocaleDateString('en-US', { month: 'long' });
+
+    if (month !== currentMonth) {
+      currentMonth = month;
+      monthHeading = createMonthHeading(currentMonth);
+      monthContainer = createMonthContainer();
+      monthContainer.appendChild(monthHeading);
+      container.appendChild(monthContainer);
+    }
+    
+    const dateDiv = createDateDiv(date);
+    monthContainer.appendChild(dateDiv);
+  }
+
+  datecont.appendChild(container);
+}
+
+function createMonthHeading(month) {
+  const heading = document.createElement('h5');
+  heading.style.textAlign = 'center';
+  heading.textContent = month;
+  return heading;
+}
+
+function createMonthContainer() {
+  const container = document.createElement('div');
+  container.style.display = 'flex';
+  container.style.flexWrap = 'wrap';
+  container.style.gap = '10px';
+  container.style.alignItems = 'center';
+  container.style.justifyContent = 'left';
+  container.style.marginBottom = '20px';
+  return container;
+}
+
+let selectedDateDiv = null;
+
+//select element
+
+function getelm(myelid){
+    
+ var myelem = document.getElementById(myelid);
+ return myelem;
+}
+
+function createDateDiv(date) {
+   
+  const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const div = document.createElement('div');
+  div.style.width = '80px';
+  div.style.height = '50px';
+  div.style.borderRadius = '4px';
+  div.style.background = '#FFDAB9';
+  div.style.color="#3C3C3C";
+  div.style.display = 'flex';
+  div.style.flexDirection = 'row';
+  div.style.alignItems = 'center';
+  div.style.justifyContent = 'space-around';
+  div.style.cursor = 'pointer';
+  div.style.padding='1em';
+  div.setAttribute('data-timestamp', date.getTime());
+
+  const dayName = weekdays[date.getDay()];
+  const dayNum = date.getDate().toString().padStart(2, '0');
+  
+  const dayNameSpan = document.createElement('span');
+  dayNameSpan.textContent = dayName;
+  dayNameSpan.style.fontSize = '10px';
+  dayNameSpan.style.fontWeight = 'bold';
+  
+  const dayNumSpan = document.createElement('span');
+  dayNumSpan.textContent = dayNum;
+
+  div.appendChild(dayNameSpan);
+  div.appendChild(dayNumSpan);
+
+  div.addEventListener('click', () => {
+    const timestamp = parseInt(div.getAttribute('data-timestamp'), 10);
+    const clickedDate = new Date(timestamp);
+    if (selectedDateDiv) {
+      selectedDateDiv.style.background= '#fff';
+    }
+    selectedDateDiv = div;
+    selectedDateDiv.style.background = 'linear-gradient(45deg,lime,silver)';
+    const seldate = formatDate(clickedDate);
+    qnotify(`Selected Date : ${seldate}`,1500);
+    appdate = seldate;
+    const timepgbtn = getelm("timepgbtn");
+    
+  });
+  return div;
+}
+
+
+function formatDate(date) {
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayName = weekdays[date.getDay()];
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear().toString().substr(-2);
+  return `${dayName} ${day}/${month}/${year}`;
+}
+
+//Timing slots
+
+function displayTimeSlots(openTime, closeTime, gapTime, clockType, country) {
+  const timezoneOffset = getTimezoneOffset(country);
+  const timeFormat = clockType === '12' ? 'h:mm A' : 'HH:mm';
+
+  const timeSlots = [];
+  let currentTime = new Date(`2000-01-01T${openTime}`);
+  const closeTimeObj = new Date(`2000-01-01T${closeTime}`);
+  let selectedTimeSlot = null; // Initialize the selected time slot to null
+
+  while (currentTime <= closeTimeObj) {
+    timeSlots.push(currentTime.toLocaleTimeString('en-US', {timeZone: timezoneOffset, hour12: clockType === '12', hour: 'numeric', minute: '2-digit'}));
+    currentTime = new Date(currentTime.getTime() + gapTime * 60 * 1000);
+  }
+
+  const timeSlotContainer = document.getElementById('timeSlotContainer');
+  timeSlotContainer.style.display="flex";
+  timeSlotContainer.style.flexWrap="wrap";
+  timeSlotContainer.style.width="100%";
+  timeSlotContainer.style.gap="10px";
+  timeSlotContainer.style.padding="1em";
+  timeSlotContainer.innerHTML = '';
+  timeSlots.forEach(timeSlot => {
+    const timeSlotElement = document.createElement('div');
+    timeSlotElement.textContent = timeSlot;
+    timeSlotElement.style.height="60px";
+    timeSlotElement.style.width="100px";
+    timeSlotElement.style.display = 'flex';
+    timeSlotElement.style.flexDirection = 'column';
+    timeSlotElement.style.alignItems = 'center';
+    timeSlotElement.style.justifyContent = 'center';
+    timeSlotElement.style.padding = '10px';
+    timeSlotElement.style.background = '#FFDAB9';
+    timeSlotElement.style.color="#3C3C3C";
+    timeSlotElement.style.borderRadius = '5px';
+    timeSlotElement.style.margin = '0.5em';
+    timeSlotElement.style.background = selectedTimeSlot === timeSlot ? '#fff' : '#FFDAB9'; // Highlight the selected time slot if it matches the current time slot
+
+    timeSlotElement.addEventListener('click', () => {
+      if (selectedTimeSlot !== null) {
+        // Clear the previous selection
+        const previousTimeSlotElement = document.querySelector(`[data-time="${selectedTimeSlot}"]`);
+        previousTimeSlotElement.style.background= '#fff';
+      }
+
+      // Update the selected time slot and highlight it
+      selectedTimeSlot = timeSlot;
+      timeSlotElement.style.background= 'linear-gradient(45deg,dodgerblue,silver)';
+      qnotify(`Selected time slot: ${selectedTimeSlot}`,1500);
+      apptime =selectedTimeSlot; 
+    });
+
+    // Add the data-time attribute to the time slot element to easily identify it later
+    timeSlotElement.setAttribute('data-time', timeSlot);
+
+    timeSlotContainer.appendChild(timeSlotElement);
+  });
+
+  return selectedTimeSlot;
+}
+
+function getTimezoneOffset(country) {
+        // TODO: Implement logic to get the timezone offset for the specified country
+        // For example, you can use the Intl.DateTimeFormat().resolvedOptions().timeZone method
+        return 'Asia/Kolkata'; // Return a hardcoded timezone offset for testing purposes
+      }
+
+function dataValue(elm){
+    
+    const myelm = document.getElementById(elm).value;
+    return myelm;
+}
+
+//localStorage function
+function setLocalStorageItem(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getLocalStorageItem(key) {
+  const value = localStorage.getItem(key);
+  return JSON.parse(value);
+}
+
+
+// Function tobok
+
+function handleBookClick(event) {
+  
+const doctorDiv = event.target.closest(".doctorscontainer");
+const mobileDiv = doctorDiv.querySelector(".mobile");
+const mobileNumber = mobileDiv.textContent.trim();
+getdrmobile(mobileNumber);
+console.log(mobileNumber);
+  
+}
+
+function getdrmobile(dmb){
+    
+    const mynumber = extractNumberFromString(dmb);
+    secdoctorid = mynumber;
+    console.log(secdoctorid);
+}
+
+function extractNumberFromString(str) {
+  const numStr = str.replace(/[^0-9.-]+/g, '');
+  return numStr;
+}
+
+//quick notify 
+
+function qnotify(message, duration) {
+     
+      const notificationBar = document.createElement("div");  
+      document.body.appendChild(notificationBar);  notificationBar.setAttribute("class","notification");
+      notificationBar.textContent = message;
+      notificationBar.style.display = 'block';
+
+      setTimeout(function() {
+        notificationBar.style.display = 'none';
+      }, duration);
+    }
+
+qnotify("Welcome",1500);
+
+
+async function getFireData(query) {
+  try {
+    const data = [];
+    const snapshot = await query.get();
+
+    snapshot.forEach((doc) => {
+      data.push({
+        id: doc.id,
+        ...doc.data()
+      });
+    });
+
+    return data;
+  } catch (error) {
+    console.error('Error getting Firestore data:', error);
+    throw error;
+  }
+}
+
+
+async function getDentistData(cat,cid) {
+  try {
+    
+    const query = db.collection('doctors').where('specialization', '==', `${cat}`);
+    
+    const doctors = await getFireData(query);
+    renderDoctors(doctors,cid);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function displayDentist(){
+
+    const cat = "Dentist";
+    const cid = "catdentist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function displayCardiologist(){
+    
+    const cat = "Cardiologist";
+    const cid = "catcardiologist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function displaySurgeon(){
+    
+    const cat = "Surgeon";
+    const cid = "catsurgeon";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function displayGeneral(){
+    
+    const cat = "General";
+    const cid = "catgeneral";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function displayDiabetics(){
+    
+    const cat = "Diabetics";
+    const cid = "catdiabetics";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function displaySkincare(){
+    
+    const cat = "Skincare";
+    const cid = "catskincare";
+    
+    getDentistData(cat,cid);
+    
+}
+
+//for dr selected tab
+
+function tabDisplayDentist(){
+    navigate("?q=tabdoctors");
+    const cat = "Dentist";
+    const cid = "drtablist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function tabDisplayCardiologist(){
+    navigate("?q=tabdoctors");
+    const cat = "Cardiologist";
+    const cid = "drtablist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function tabDisplaySurgeon(){
+    navigate("?q=tabdoctors");
+    const cat = "Surgeon";
+    const cid = "drtablist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function tabDisplayGeneral(){
+    navigate("?q=tabdoctors");
+    const cat = "General";
+    const cid = "drtablist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function tabDisplayDiabetics(){
+    navigate("?q=tabdoctors");
+    const cat = "Diabetics";
+    const cid = "drtablist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function tabDisplaySkincare(){
+    navigate("?q=tabdoctors");
+    const cat = "Skincare";
+    const cid = "drtablist";
+    
+    getDentistData(cat,cid);
+    
+}
+
+function convertTo12Hour(time) {
+  let [hours, minutes] = time.split(':');
+  hours = parseInt(hours);
+  const suffix = hours < 12 ? 'AM' : 'PM';
+  hours = (hours % 12) || 12;
+  return `${hours}:${minutes} ${suffix}`;
+}
+
+function extractTime(timeString) {
+  const timeRegex = /^(\d{1,2}:\d{2})/; 
+  const match = timeString.match(timeRegex);  
+
+  if (match) {
+    return match[1];
+  }
+
+  // Return undefined if no match found
+  return undefined;
+}
+
+function goodTime(giventime){
+    
+    const inputtime = extractTime(giventime);
+    const correctformat = convertTo12Hour(inputtime);
+    return correctformat;
+    
+}
+
+function getCurrentDateTime() {
+  const currentDate = new Date();
+  return currentDate.toLocaleString();
+}
+
+const doctorsCollection = db.collection('doctors');
+async function filterDoctorsByLocation(location) {
+  try {
+    const snapshot = await doctorsCollection.where('location', '==', location).get();
+    const doctors = snapshot.docs.map(doc => doc.data());
+    return doctors;
+  } catch (error) {
+    console.error('Error filtering doctors by location:', error);
+    throw error;
+  }
+}
+
+function refreshPage() {
+  location.reload();
+}
+
+
+    </script>
+    
+</body>
+</html>
